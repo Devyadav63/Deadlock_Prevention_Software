@@ -22,13 +22,3 @@ def is_safe_state(available, max_demand, allocation):
 
     return True, safe_sequence
 
-if __name__ == "__main__":
-    available = [3, 3, 2]
-    max_demand = [[7, 5, 3], [3, 2, 2], [9, 0, 2], [2, 2, 2], [4, 3, 3]]
-    allocation = [[0, 1, 0], [2, 0, 0], [3, 0, 2], [2, 1, 1], [0, 0, 2]]
-
-    safe, sequence = is_safe_state(available, max_demand, allocation)
-    if safe:
-        print(f"\n✅ System is in a Safe State. Safe Sequence: {sequence}")
-    else:
-        print("\n❌ Deadlock Risk! System is in an Unsafe State.")
