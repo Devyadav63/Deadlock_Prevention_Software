@@ -21,7 +21,7 @@ class DeadlockApp(ctk.CTk):
         self.grid_columnconfigure(1, weight=1)
 
         # Header Frame
-        self.header_frame = ctk.CTkFrame(self, height=50, corner_radius=0, fg_color="blue")
+        self.header_frame = ctk.CTkFrame(self, height=50, corner_radius=0, fg_color="green")
         self.header_frame.grid(row=0, column=0, columnspan=2, sticky="nsew")
         self.header_label = ctk.CTkLabel(self.header_frame, text="  Deadlock Detection", font=("Arial", 18, "bold"),text_color="white")
         self.header_label.pack(side="left", padx=10)
@@ -54,7 +54,7 @@ class DeadlockApp(ctk.CTk):
 
         # Buttons inside Side Panel (each taking half the height)
         self.check_again_btn = ctk.CTkButton(self.side_panel, text="Check Again", command=self.run_deadlock_check,
-                                             height=80,fg_color="blue")
+                                             height=80,fg_color="green")
         self.check_again_btn.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
 
         self.main_menu_btn = ctk.CTkButton(self.side_panel, text="Main Menu", command=self.clear_output, height=80)

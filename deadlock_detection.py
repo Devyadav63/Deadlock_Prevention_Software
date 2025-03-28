@@ -1,6 +1,15 @@
 import psutil
 
-
+def detect_deadlocks():
+    """Detects potential deadlocks by checking for blocked processes."""
+    deadlocks = {}
+    for proc in psutil.process_iter(attrs=['pid', 'name', 'status']):
+        try:
+            if proc.info['status'] == psutil.STATUS_STOPPED:  # Simulate checking for blocked processes
+                deadlocks[f"Resource-{proc.pid}"] = [proc.pid]
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            continue
+    return deadlocks
 def detect_resource_contention():
     """ Detects potential deadlocks by checking resource contention and logs the output to a file """
     resource_locks = {}
